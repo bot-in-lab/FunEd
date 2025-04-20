@@ -3,6 +3,8 @@ import { navLinks } from "../../Data";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
 import MobileNavLinks from "./MobileNavLinks";
 import NavLink from "./NavLink";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     const [active,setActive] = useState(null);
@@ -28,9 +30,9 @@ const Navbar = () => {
                 return <NavLink key={navLink.id} {...navLink} />;
             })}
           </div>
-          <button className="py-3 px-6 font-bold text-sm border border-solid rounded-lg border-gray hover:text-Teal">
-            Sign Up
-            </button>
+          <Link to="/Login" className="py-3 px-6 font-bold text-sm border border-solid rounded-lg border-gray hover:text-Teal">
+            Login
+            </Link>
             {toggle && <div className="fixed h-full w-96 top-0 left z-20 bg-Teal text-white flex flex-col justify-center items-center shadow-lg gap-8 py-8">
                 {navLinks.map(navLink => {
                     return <MobileNavLinks key={navLink.id} {...navLink} setToggle={(setToggle)} />
