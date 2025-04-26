@@ -4,6 +4,7 @@ import { HiMenuAlt1, HiX } from "react-icons/hi";
 import MobileNavLinks from "./MobileNavLinks";
 import NavLink from "./NavLink";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
@@ -33,12 +34,12 @@ const Navbar = () => {
           <Link to="/Login" className="py-3 px-6 font-bold text-sm border border-solid rounded-lg border-gray hover:text-Teal">
             Login
             </Link>
-            {toggle && <div className="fixed h-full w-96 top-0 left z-20 bg-Teal text-white flex flex-col justify-center items-center shadow-lg gap-8 py-8">
+            {toggle && <motion.div initial={{ x: -500, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }} className="fixed h-full w-96 top-0 left z-20 bg-Teal text-white flex flex-col justify-center items-center shadow-lg gap-8 py-8">
                 {navLinks.map(navLink => {
                     return <MobileNavLinks key={navLink.id} {...navLink} setToggle={(setToggle)} />
                 })}
                 <HiX className="absolute right-12 top-12 text-3xl cursor-pointer" onClick={(prev) => setToggle(!prev)}/>
-            </div>}
+            </motion.div>}
         </div>
       </div>
     </div>
