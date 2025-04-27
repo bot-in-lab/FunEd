@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Navbar, Home, About, Teacher, Contact, Courses, Footer } from "./components/index";
-import Login from "./components/container/Login";
+import { Navbar, Home, About, Teacher, Contact, Courses, Footer } from "./view/index";
+import Login from "./view/container/Login";
 
 const MainLayout = () => (
   <div className="font-poppins bg-Solitude pt-20">
