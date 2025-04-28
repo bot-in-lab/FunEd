@@ -1,5 +1,6 @@
 import React from "react";
 import about from "../../assets/About.jpg"
+import { Link } from "react-router-dom";
 
 const About = () => {
     return (
@@ -19,7 +20,9 @@ const About = () => {
               instructors, engaging content, and flexible learning paths empower learners 
               of all levels to grow and succeed at their own pace.
             </p>
-            <button className="py-3 px-6 text-sm border border-solid border-gray rounded-lg font-bold">Learn More</button>
+            <Link className="py-3 px-6 text-sm border border-solid border-gray rounded-lg font-bold hover:text-Teal" to="/CourseList">
+              See More
+            </Link>
           </div>
         </div>
       </div>

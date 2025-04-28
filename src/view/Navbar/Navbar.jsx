@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { navLinks } from "../../Data";
-import { HiMenuAlt1, HiX } from "react-icons/hi";
-import MobileNavLinks from "./MobileNavLinks";
-import NavLink from "./NavLink";
+import { HiMenuAlt1 } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const Navbar = () => {
-    const [toggle, setToggle] = useState(false);
     const [active,setActive] = useState(null);
     useEffect(() => {
       const scrollActive = () => {
@@ -22,24 +17,25 @@ const Navbar = () => {
         <div className={`${active ? "py-2 transition-all duration-300" : "py-4"} container mx-auto flex items-center justify-between px-2`}>
           <div className="flex items-center gap-4">
             <HiMenuAlt1 className="text-3xl sm:hidden cursor-pointer" onClick={() => setToggle(true)}/>
-            <div className="text-xl text-Teal tracking-wide font-bold">
+            <Link to="/" className="text-xl text-Teal tracking-wide font-bold">
               FunEd
-            </div>
+            </Link>
           </div>
           <div className="sm:flex items-center hidden">
-            {navLinks.map(navLink => {
-                return <NavLink key={navLink.id} {...navLink} />;
-            })}
+          <li className="font-bold hover:text-Teal list-none cursor-pointer mr-8">
+              <Link to="/CourseList">
+                Courses
+              </Link>
+            </li>
+            <li className="font-bold hover:text-Teal list-none cursor-pointer mr-8">
+              <Link to="/TeacherList">
+                Teacher
+              </Link>
+            </li>
           </div>
           <Link to="/Login" className="py-3 px-6 font-bold text-sm border border-solid rounded-lg border-gray hover:text-Teal">
             Login
             </Link>
-            {toggle && <motion.div initial={{ x: -500, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.3 }} className="fixed h-full w-96 top-0 left z-20 bg-Teal text-white flex flex-col justify-center items-center shadow-lg gap-8 py-8">
-                {navLinks.map(navLink => {
-                    return <MobileNavLinks key={navLink.id} {...navLink} setToggle={(setToggle)} />
-                })}
-                <HiX className="absolute right-12 top-12 text-3xl cursor-pointer" onClick={(prev) => setToggle(!prev)}/>
-            </motion.div>}
         </div>
       </div>
     </div>
