@@ -34,7 +34,7 @@ const Navbar = () => {
             </li>
             <li className="font-bold hover:text-Teal list-none cursor-pointer mr-8">
               <Link to="/DashboardHome">
-                Teacher
+                DashboardHome
               </Link>
             </li>
           </div>
