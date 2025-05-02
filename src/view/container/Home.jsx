@@ -37,7 +37,7 @@ const Home = () => {
             Vero official sit vitae quo, eum similique?
           </p>
           <div className="mt-6">
-            <button className="px-6 py-3 font-bold text-white bg-Teal rounded-lg mr-4 text-sm">Get Started</button>
+            <a href="./Signup" className="px-6 py-3 font-bold text-white bg-Teal rounded-lg mr-4 text-sm">Get Started</a>
             <button className="px-6 py-3 font-bold border border-solid border-gray rounded-lg text-sm">Discover</button>
           </div>
         </div>

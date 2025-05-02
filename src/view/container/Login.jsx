@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -39,10 +40,6 @@ const Login = () => {
             />
           </div>
 
-          <div className="text-sm text-right text-Teal cursor-pointer hover:underline">
-            Forget Password?
-          </div>
-
           <button
             type="submit"
             className="w-full bg-Teal text-white font-bold py-2 rounded-md hover:bg-opacity-90 transition duration-200"
@@ -53,9 +50,9 @@ const Login = () => {
 
         <div className="text-center mt-4 text-sm">
           Don’t have an account?{" "}
-          <span className="text-Teal font-semibold cursor-pointer hover:underline">
+          <Link to="/Signup" className="text-Teal font-semibold cursor-pointer hover:underline">
             Sign Up
-          </span>
+          </Link>
         </div>
       </div>
     </div>

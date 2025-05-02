@@ -4,6 +4,8 @@ import { Navbar, Home, About, Teacher, Contact, Courses, Footer } from "./view/i
 import Login from "./view/container/Login";
 import CourseList from "./view/container/CourseList";
 import TeacherList from "./view/container/TeacherList";
+import Signup from "./view/container/SignUp";
+import DashboardHome from "./view/container/StudentDashboard/DashboardHome";
 
 const MainLayout = () => (
   <div className="font-poppins bg-Solitude pt-20">
@@ -41,6 +43,19 @@ const LoginLayout = () => (
   </div>
 );
 
+const SignupLayout = () => (
+  <div className="font-poppins bg-Solitude pt-20">
+    <Navbar />
+    <Signup />
+    <Footer />
+  </div>
+);
+
+const DashboardHomeLayout = () => (
+  <div className="font-poppins bg-Solitude pt-20">
+    <DashboardHome />
+  </div>
+);
 
 const router = createBrowserRouter([
   {
@@ -59,6 +74,14 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LoginLayout />,
   },
+  {
+    path: "/signup",
+    element: <SignupLayout />,
+  },
+  {
+    path: "/DashboardHome",
+    element: <DashboardHomeLayout />,
+  }
 ]);
 
 function App() {

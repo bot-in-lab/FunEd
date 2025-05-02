@@ -32,6 +32,11 @@ const Navbar = () => {
                 Teacher
               </Link>
             </li>
+            <li className="font-bold hover:text-Teal list-none cursor-pointer mr-8">
+              <Link to="/DashboardHome">
+                Teacher
+              </Link>
+            </li>
           </div>
           <Link to="/Login" className="py-3 px-6 font-bold text-sm border border-solid rounded-lg border-gray hover:text-Teal">
             Login
